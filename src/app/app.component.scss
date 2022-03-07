@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  perspective: 10px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+}
+
+app-button{
+  background: hsl(299deg 59% 34%);
+}
+
+
+
+app-form > app-button {
+  width: 200px;
+  height: 55px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  background-image: linear-gradient(to right, hsl(214deg 67% 28%), hsl(297deg 62% 32%));
+  
+;
+}
+
+app-form > app-input {
+  width: 100%;
+  height: 55px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+h3 {
+  text-align: center;
+}
+
+
+app-header-cards > app-card {
+  flex-basis: 11%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+  
+  
+  
+
+
