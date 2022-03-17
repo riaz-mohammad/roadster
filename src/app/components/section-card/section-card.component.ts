@@ -1,10 +1,20 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { image } from '../../animations';
 
 @Component({
   selector: 'app-section-card',
   template: `
     <image-container [style.order]="order">
-      <img src="../../../assets/roadster.jpeg" [style.--flip]="flip" />
+      <img
+        src="../../../assets/moon.png"
+        [style.transform]="turnImage"
+        class="first_image"
+      />
+      <img
+        src="../../../assets/car.png"
+        [style.transform]="turnImage"
+        class="second_image"
+      />
     </image-container>
     <h4>
       Hello world amazing thing happens in the space. Fantasy is a dream.Fantasy
@@ -24,34 +34,35 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
         width: 60%;
         height: 70%;
         color: white;
-        background-image: linear-gradient(
-          to right,
-          hsl(255deg 67% 10%),
-          hsl(255deg 67% 10%),
-          hsl(309deg 68% 24%)
-        );
       }
       image-container {
         width: 30%;
         height: 100%;
+        position: relative;
       }
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transform: scaleX(var(--flip));
+        left: 0;
+        top: 0;
+        position: absolute;
       }
 
-      h4 {
+    h4 {
         width: 55%;
       }
     `,
   ],
+  animations: [image],
 })
 export class SectionCardComponent {
-
   @Input() flip!: number;
   @Input() order!: number;
+
+  get turnImage(): string {
+    return `scaleX(${this.flip})`;
+  }
 
   @HostBinding('style.background-image')
   get color(): string {

@@ -11,7 +11,7 @@
   <app-header-cards>
     <app-card  [@card]="{value: '', params: {translate: 'translateX(300%)'}}" height="250px"></app-card>
     <app-card  [@card]="{value: '', params: {translate: 'translateX(150%)'}}" height="280px"></app-card>
-    <app-card  [@card]="{value: '', params: {translate: 'translateX(0%)'}}" height="320px"></app-card>
+    <app-card  [@card]="{value: '', params: {translate: 'translateX(0%)'}}"   height="320px"></app-card>
     <app-card  [@card]="{value: '', params: {translate: 'translateX(-150%)'}}" height="280px"></app-card>
     <app-card  [@card]="{value: '', params: {translate: 'translateX(-300%)'}}" height="250px"></app-card>
   </app-header-cards>
@@ -20,31 +20,31 @@
 <app-section>
   <app-section-card 
       [flip]="1" [order]="0"
-      [appObserver]="'translateX(-30%)'"
+      [appObserver]="{translate: 'translateX(-30%)', left: '20%'}"
       ></app-section-card>
 </app-section>
 <app-section>
   <app-section-card 
     [flip]="-1" [order]="1"
-    [appObserver]="'translateX(30%)'"
+    [appObserver]="{translate: 'translateX(30%)', left: '-20%'}"
     ></app-section-card>
 </app-section>
 <app-section>
   <app-section-card 
     [flip]="1" [order]="0"
-    [appObserver]="'translateX(-30%)'"
+    [appObserver]="{translate: 'translateX(-30%)', left: '20%'}"
     ></app-section-card>
 </app-section>
 <app-section>
   <app-section-card 
     [flip]="-1" [order]="1"
-    [appObserver]="'translateX(30%)'"
+    [appObserver]="{translate: 'translateX(30%)', left: '-20%'}"
     ></app-section-card>
 </app-section>
 <app-section>
   <app-section-card 
     [flip]="1" [order]="0"
-    [appObserver]="'translateX(-30%)'"
+    [appObserver]="{translate: 'translateX(-30%)', left: '20%'}"
     ></app-section-card>
 </app-section>
   

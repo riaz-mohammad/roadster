@@ -19,27 +19,6 @@ export const card = trigger('card', [
 ]);
 
 
-
-export const animateCard = trigger('animateCard', [
-  state('false', style({
-    opacity: 0,
-    transform: '{{translate}}'
-  }),
-    { params: { translate: 'translateX(0%)' } }
-  ),
-  
-  state('true', style({
-    opacity: 1,
-    transform: 'translateX(0%)'
-  })),
-
-  transition('true <=> false', [
-    animate('800ms ease')
-  ])
-]);
-
-
-
 export const input = trigger('input', [
   transition(':enter', [
     group([
@@ -61,3 +40,67 @@ export const input = trigger('input', [
     ])
   ]),
 ]);
+
+
+export const image = trigger('image', [
+  transition(':enter', [
+    style({
+      opacity: 0
+    }),
+    animate('500ms ease')
+  ])
+])
+
+
+
+
+
+
+
+export const animateCard = trigger('animateCard', [
+  state('false', style({
+    opacity: 0,
+    transform: '{{translate}}'
+  }),
+    { params: { translate: 'translateX(0%)' } }
+  ),
+  
+  state('true', style({
+    opacity: 1,
+    transform: 'translateX(0%)'
+  })),
+
+  transition('true <=> false', [
+    group([
+      query('.first_image', [
+          style({
+            opacity: 0,
+            top: '10%'
+          }),
+        animate('500ms 1000ms ease',
+          style({
+            opacity: 1,
+            top: '0%'
+          }))
+      ], { optional: true }),
+      
+      query('.second_image', [
+          style({
+            opacity: 0,
+            top: '10%',
+            left: '{{left}}',
+          }),
+        animate('500ms 600ms ease',
+          style({
+            opacity: 1,
+            top: '*',
+            left: '*'
+          }))
+      ], { optional: true }),
+      
+
+      animate('800ms ease')
+    ])
+  ], {params: {left: '0%'}})
+]);
+
